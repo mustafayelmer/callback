@@ -1,0 +1,61 @@
+{
+  "name": "@leyyo/callback",
+  "version": "1.0.4",
+  "description": "Callback/Hook component for JavaScript/TypeScript",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mustafayelmer/callback.git"
+  },
+  "bugs": {
+    "email": "mustafayelmer@gmail.com",
+    "url": "https://github.com/mustafayelmer/callback/issues"
+  },
+  "homepage": "https://github.com/mustafayelmer/callback#readme",
+  "author": {
+    "name": "Mustafa Yelmer",
+    "email": "mustafayelmer@gmail.com"
+  },
+  "main": "dist/index.js",
+  "scripts": {
+    "clear": "rimraf dist",
+    "lint": "eslint src/**/*.ts",
+    "build": "npm run clear && tsc",
+    "test": "jest --config=jest.json",
+    "test:watch": "jest --watch --config=jest.json",
+    "test:coverage": "jest --config=jest.json --coverage --coverageDirectory=coverage",
+    "start": "npm run lint && npm run build && npm run run:js",
+    "run:js": "node dist/server.js",
+    "run:ts": "node -r ts-node/register src/server.ts",
+    "~publish": "npm run build && npm publish -access=public",
+    "~install": "npm install",
+    "~outdated": "npm outdated",
+    "~update": "npm update"
+  },
+  "files": [
+    "dist/*"
+  ],
+  "license": "ISC",
+  "devDependencies": {
+    "@types/jest": "^27.0.2",
+    "@types/node": "^16.10.3",
+    "@typescript-eslint/eslint-plugin": "^4.13.0",
+    "@typescript-eslint/parser": "^4.13.0",
+    "eslint": "^7.18.0",
+    "eslint-config-prettier": "^8.1.0",
+    "eslint-config-standard": "^16.0.2",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-standard": "^5.0.0",
+    "jest": "^27.2.5",
+    "prettier": "^2.2.1",
+    "ts-jest": "^27.0.5",
+    "ts-node": "^10.0.0",
+    "typescript": "^4.1.4"
+  },
+  "dependencies": {
+    "@leyyo/core": "^1.0.1",
+    "@leyyo/fqn": "^1.0.13",
+    "@leyyo/logger": "^1.0.2",
+    "dotenv": "^10.0.0",
+    "rimraf": "^3.0.2"
+  }
+}
